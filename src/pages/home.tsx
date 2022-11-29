@@ -79,39 +79,51 @@ const Cards = (props: CardsProps) => {
     )
 }
 
-const ArtSection = () => {
+type SectionProps = {
+    id: number,
+    name: string,
+    cards: CardsProps[]
+}
+
+const Section = (props: SectionProps) => {
     return (
         <div>
-            <h1 className='min-h-min overflow-hidden text-center text-white font-comfortaa text-2xl my-4'>Digital Art</h1>
+            <h1 className='min-h-min overflow-hidden text-center text-white font-comfortaa text-2xl my-4'>{props.name}</h1>
             <div className='min-h-min overflow-hidden bg-tealMenu rounded-xl flex flex-row flex-nowrap justify-start shadow-inner shadow-teal-900'>
-                <Carousel />
+                <Carousel cards={props.cards} />
             </div>
-            {/* <div className='bg-tealMenu rounded-xl flex flex-row flex-wrap justify-start shadow-inner shadow-teal-900'>
-                <Cards title="Orma" description="Snake boy" image="/images/Orma.jpg" />
-                <Cards title="Tteok Bokki Bathhouse" description="Yummers" image="/images/TBBathhouse.png" />
-                <Cards title="Mogu Globe" description="Mushroom girl" image="/images/MomoGlobe.png" />
-                <Cards title="Niko Floating" description="Water boy" image="/images/NikoGif.gif" />
-            </div> */}
         </div>
     )
 }
 
-const Carousel = () => {
+type CarouselProps = {
+    cards: CardsProps[]
+}
+
+const Carousel = (props: CarouselProps) => {
     return (
         <div className='min-h-min m-2 rounded-lg bg-white flex flex-nowrap flex-row overflow-y-hidden overflow-x-scroll'>
-            <Cards title="Orma" description="Snake boy" image="/images/Orma.jpg" />
-            <Cards title="Tteok Bokki Bathhouse" description="Yummers" image="/images/TBBathhouse.png" />
-            <Cards title="Mogu Globe" description="Mushroom girl" image="/images/MomoGlobe.png" />
-            <Cards title="Niko Floating" description="Water boy" image="/images/NikoGif.gif" />
-            <Cards title="Orma" description="Snake boy" image="/images/Orma.jpg" />
-            <Cards title="Tteok Bokki Bathhouse" description="Yummers" image="/images/TBBathhouse.png" />
-            <Cards title="Mogu Globe" description="Mushroom girl" image="/images/MomoGlobe.png" />
-            <Cards title="Niko Floating" description="Water boy" image="/images/NikoGif.gif" />
+
         </div>
     )
 }
 
 export default function HomePage() {
+
+    const exampleProps: SectionProps = {
+        id: 1,
+        name: 'Digital Art',
+        cards: []
+    }
+
+    const cardProp1: CardsProps = {
+        title: "Niko Floating",
+        description: "Water boy",
+        image: "/images/NikoGif.gif"
+    }
+
+    exampleProps.cards.push(cardProp1);
+
     return (
         <>
             <Head>
@@ -125,10 +137,15 @@ export default function HomePage() {
                 <div className='h-[3000px] flex-col justify-center items-center overflow-hidden'>
                     <Banner />
                     <div className='px-10 mt-4 overflow-hidden'>
-                        <ArtSection />
+                        <Section {...exampleProps}/>
                     </div>
                 </div>
             </div>
         </>
     )
 }
+
+{/* <Cards title="Orma" description="Snake boy" image="/images/Orma.jpg" />
+            <Cards title="Tteok Bokki Bathhouse" description="Yummers" image="/images/TBBathhouse.png" />
+            <Cards title="Mogu Globe" description="Mushroom girl" image="/images/MomoGlobe.png" />
+            <Cards title="Niko Floating" description="Water boy" image="/images/NikoGif.gif" /> */}
