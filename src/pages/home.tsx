@@ -71,8 +71,8 @@ type CardsProps = {
 
 const Cards = (props: CardsProps) => {
     return (
-        <div className='h-[400px] bg-teal-700 rounded-lg m-4 shadow-lg'>
-            <img className='object-contain w-full h-2/3 bg-niko-shade rounded-t-lg' src={props.image}></img>
+        <div className='block max-h-[400px] bg-teal-700 rounded-lg m-4 shadow-lg'>
+            <img className='object-contain h-2/3 bg-niko-shade rounded-t-lg' src={props.image}></img>
             <p className='m-2 font-comfortaa text-lg text-white'>{props.title}</p>
             <p className='mx-2 font-comfortaa text-sm text-white'>{props.description}</p>
         </div>
@@ -82,13 +82,31 @@ const Cards = (props: CardsProps) => {
 const ArtSection = () => {
     return (
         <div>
-            <h1 className='text-center text-white font-comfortaa text-2xl my-4'>Digital Art</h1>
-            <div className='bg-tealMenu rounded-xl flex flex-row flex-wrap justify-start shadow-inner shadow-teal-900'>
+            <h1 className='min-h-min overflow-hidden text-center text-white font-comfortaa text-2xl my-4'>Digital Art</h1>
+            <div className='min-h-min overflow-hidden bg-tealMenu rounded-xl flex flex-row flex-nowrap justify-start shadow-inner shadow-teal-900'>
+                <Carousel />
+            </div>
+            {/* <div className='bg-tealMenu rounded-xl flex flex-row flex-wrap justify-start shadow-inner shadow-teal-900'>
                 <Cards title="Orma" description="Snake boy" image="/images/Orma.jpg" />
                 <Cards title="Tteok Bokki Bathhouse" description="Yummers" image="/images/TBBathhouse.png" />
                 <Cards title="Mogu Globe" description="Mushroom girl" image="/images/MomoGlobe.png" />
                 <Cards title="Niko Floating" description="Water boy" image="/images/NikoGif.gif" />
-            </div>
+            </div> */}
+        </div>
+    )
+}
+
+const Carousel = () => {
+    return (
+        <div className='min-h-min m-2 rounded-lg bg-white flex flex-nowrap flex-row overflow-y-hidden overflow-x-scroll'>
+            <Cards title="Orma" description="Snake boy" image="/images/Orma.jpg" />
+            <Cards title="Tteok Bokki Bathhouse" description="Yummers" image="/images/TBBathhouse.png" />
+            <Cards title="Mogu Globe" description="Mushroom girl" image="/images/MomoGlobe.png" />
+            <Cards title="Niko Floating" description="Water boy" image="/images/NikoGif.gif" />
+            <Cards title="Orma" description="Snake boy" image="/images/Orma.jpg" />
+            <Cards title="Tteok Bokki Bathhouse" description="Yummers" image="/images/TBBathhouse.png" />
+            <Cards title="Mogu Globe" description="Mushroom girl" image="/images/MomoGlobe.png" />
+            <Cards title="Niko Floating" description="Water boy" image="/images/NikoGif.gif" />
         </div>
     )
 }
@@ -104,9 +122,9 @@ export default function HomePage() {
 
             </Head>
             <div className='bg-niko-shade h-screen scrollbar-hide overflow-auto'>
-                <div className='h-[3000px] flex-col justify-center items-center'>
+                <div className='h-[3000px] flex-col justify-center items-center overflow-hidden'>
                     <Banner />
-                    <div className='px-10 mt-4'>
+                    <div className='px-10 mt-4 overflow-hidden'>
                         <ArtSection />
                     </div>
                 </div>
