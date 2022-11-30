@@ -4,7 +4,7 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily:{
+      fontFamily: {
         'comfortaa': ['Comfortaa', 'sans-serif']
       },
       colors: {
