@@ -9,7 +9,8 @@ module.exports = {
       },
       colors: {
         'niko-shade': '#101123',
-        'tealMenu': '#3D3B51'
+        'tealMenu': '#3D3B51',
+        'niko-orange': '#FFBD1F'
       },
     },
   },
