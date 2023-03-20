@@ -41,7 +41,7 @@ const Home: NextPage = () => {
               </div>
             </Link>
           </div>
-          <Link className="text-lg text-white" href="/home">Click here to go to Niko's portfolio!</Link>
+          <Link className="text-lg text-white" href="/home">Click here to go to Niko&apos;s portfolio!</Link>
           <p className="text-2xl text-white">
             {hello.data ? hello.data.greeting : "Loading tRPC query..."}
           </p>
