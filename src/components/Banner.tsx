@@ -6,7 +6,7 @@ type BannerButtonProps = {
 
 const BannerButtons = (props: BannerButtonProps) => {
     return (
-        <button className='text-teal-600 font-comfortaa text-lg mx-4 hover:text-white transition-colors'>{props.buttonContent}</button>
+        <button className='text-teal-600 font-comfortaa text-lg mx-4 hover:text-niko-orange transition-colors'>{props.buttonContent}</button>
     )
 }
 

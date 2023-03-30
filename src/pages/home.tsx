@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import Head from "next/head";
 import Link from "next/link";
 import { trpc } from "../utils/trpc";
@@ -13,6 +14,10 @@ export default function HomePage() {
     const newItem3: CardsProps = {title:"Mogu Globe", description:"Mushroom girl", image:"/images/MomoGlobe.png"}
     const newItem4: CardsProps = {title:"Niko Floating", description:"Water boy", image:"/images/NikoGif.gif"}
     const cardlist: CardsProps[] = [];
+    cardlist.push(newItem);
+    cardlist.push(newItem2);
+    cardlist.push(newItem3);
+    cardlist.push(newItem4);
     cardlist.push(newItem);
     cardlist.push(newItem2);
     cardlist.push(newItem3);
